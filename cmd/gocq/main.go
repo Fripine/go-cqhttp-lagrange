@@ -42,7 +42,7 @@ import (
 //	如果传入 -d 参数，程序将在启动 daemon 后终止。
 func InitBase() {
 	base.Parse()
-	if !base.FastStart && terminal.RunningByDoubleClick() {
+	if terminal.RunningByDoubleClick() {
 		err := terminal.NoMoreDoubleClick()
 		if err != nil {
 			log.Errorf("遇到错误: %v", err)
