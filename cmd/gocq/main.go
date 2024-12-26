@@ -208,7 +208,28 @@ func LoginInteract() {
 		time.Sleep(time.Second * 5)
 	}
 	log.Info("开始尝试登录并同步消息...")
-	app := auth.AppList["linux"]["3.2.10-25765"]
+	//app := auth.AppList["linux"]["3.2.10-25765"]
+	app := &auth.AppInfo{
+		OS:       "Linux",
+		Kernel:   "Linux",
+		VendorOS: "linux",
+
+		CurrentVersion:   "3.2.15-30366",
+		BuildVersion:     30366,
+		MiscBitmap:       32764,
+		PTVersion:        "2.0.0",
+		PTOSVersion:      19,
+		PackageName:      "com.tencent.qq",
+		WTLoginSDK:       "nt.wtlogin.0.0.1",
+		PackageSign:      "V1_LNX_NQ_3.2.15_30366_GW_B",
+		AppID:            1600001615,
+		SubAppID:         537258424,
+		AppIDQrcode:      13697054,
+		AppClientVersion: 30366,
+		MainSigmap:       169742560,
+		SubSigmap:        0,
+		NTLoginType:      1,
+	}
 	log.Infof("使用协议: %s %s", app.OS, app.CurrentVersion)
 	cli = newClient(app)
 	cli.UseDevice(device)
