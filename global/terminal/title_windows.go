@@ -11,7 +11,7 @@ import (
 	"github.com/Mrs4s/go-cqhttp/internal/base"
 )
 
-func setConsoleTitle(title string) error {
+func SetConsoleTitle(title string) error {
 	p0, err := syscall.UTF16PtrFromString(title)
 	if err != nil {
 		return err
@@ -25,5 +25,5 @@ func setConsoleTitle(title string) error {
 
 // SetTitle 设置标题为 go-cqhttp `版本` `版权`
 func SetTitle() {
-	_ = setConsoleTitle(fmt.Sprintf("go-cqhttp "+base.Version+" © 2020 - %d Mrs4s", time.Now().Year()))
+	_ = SetConsoleTitle(fmt.Sprintf("go-cqhttp "+base.Version+" © 2020 - %d Mrs4s", time.Now().Year()))
 }
