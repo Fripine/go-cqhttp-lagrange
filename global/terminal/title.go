@@ -13,3 +13,6 @@ import (
 func SetTitle() {
 	fmt.Printf("\033]0;go-cqhttp "+base.Version+" © 2020 - %d Mrs4s"+"\007", time.Now().Year())
 }
+func SetTitleExtra(uin uint32) {
+	fmt.Printf("\033]0;go-cqhttp "+base.Version+" Uin: %v"+"\007", uin)
+}

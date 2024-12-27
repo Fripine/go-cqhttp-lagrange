@@ -338,7 +338,7 @@ func LoginInteract() {
 	saveToken()
 	// cli.AllowSlider = true
 	log.Infof("登录成功 欢迎使用: %v", cli.NickName())
-	_ = terminal.SetConsoleTitle(fmt.Sprintf("go-cqhttp "+base.Version+" Uin: %v", cli.Uin))
+	terminal.SetTitleExtra(cli.Uin)
 	log.Info("开始加载好友列表...")
 	global.Check(cli.RefreshFriendCache(), true)
 	friendListLen := len(cli.GetCachedAllFriendsInfo())
